@@ -18,6 +18,7 @@
 
 - name: Ensure globally-installed Drush is symlinked into bin dir.
   file:
-    src: "~/.composer/vendor/bin/drush"
+    src: "{{ drush_composer_home_path }}/vendor/bin/drush"
     dest: "{{ drush_composer_path }}"
     state: link
+  become: yes
